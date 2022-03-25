@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Planilha {
@@ -35,5 +36,12 @@ public class Planilha {
         }
 
         return list;
+    }
+    public static HashMap<String, String> hashMap(List<DadosPlanilha> users) {
+        HashMap<String, String> map = new HashMap<>();
+        for (DadosPlanilha user : users) {
+            map.put(user.getLogin().toLowerCase(), user.getPerfil());
+        }
+        return map;
     }
 }
